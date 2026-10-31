@@ -1,0 +1,48 @@
+{
+    "name": "filippo-toso/wireguard-proxy",
+    "description": "Forward an HTTP request to a URL inside a WireGuard tunnel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Filippo Toso",
+            "email": "filippo.toso@creativepark.it"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../wireguard-transport",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "filippo-toso/wireguard-transport": "^1.0",
+        "guzzlehttp/psr7": "^2.6",
+        "psr/http-message": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.5",
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FilippoToso\\WireguardProxy\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FilippoToso\\WireguardProxy\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse --memory-limit=512M"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
